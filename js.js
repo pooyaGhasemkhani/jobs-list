@@ -1,18 +1,18 @@
 var jobs =[
-    {avatar:'Untitled.jpg', company:'hyper yek', title:'senior Frontend Developer', description:'3000$', lable:'vue.js'},
-    {avatar:'Untitled.jpg', company:'samim', title:'Fullstack Developer', description:'4500$', lable:'c#'},
-    {avatar:'Untitled.jpg', company:'snap', title:'Junior Frontend Developer', description:'2500$', lable:'react.js'},
-    {avatar:'Untitled.jpg', company:'tosan', title:'Junior Frontend Developer', description:'2700$', lable:'vue.js'},
-    {avatar:'Untitled.jpg', company:'drNext', title:'Softwear Test Engineer', description:'4000$', lable:'css'},
-    {avatar:'Untitled.jpg', company:'oxin', title:'Softwear Engineer', description:'3000$', lable:'html'},
-    {avatar:'Untitled.jpg', company:'fidan', title:'Junior Backend Developer', description:'2300$', lable:'java'},
-    {avatar:'Untitled.jpg', company:'maxim', title:'Junior Frontend Developer', description:'2000$', lable:'css'},
-    {avatar:'Untitled.jpg', company:'spotify', title:'Softwear Test Engineer', description:'4000$', lable:'html'},
-    {avatar:'Untitled.jpg', company:'sound cloud', title:'Fullstack Developer', description:'4700$', lable:'c#'},
+    {avatar:'Untitled.jpg', company:'hyper yek', title:'senior Frontend Developer', description:'3000$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'samim', title:'Fullstack Developer', description:'4500$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'snap', title:'Junior Frontend Developer', description:'2500$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'tosan', title:'Junior Frontend Developer', description:'2700$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'drNext', title:'Softwear Test Engineer', description:'4000$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'oxin', title:'Softwear Engineer', description:'3000$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'fidan', title:'Junior Backend Developer', description:'2300$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'maxim', title:'Junior Frontend Developer', description:'2000$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'spotify', title:'Softwear Test Engineer', description:'4000$', lable:['html','css','vue']},
+    {avatar:'Untitled.jpg', company:'sound cloud', title:'Fullstack Developer', description:'4700$', lable:['html','css','vue']},
 ]
 
 
-var temp, i, jobs_list ;
+var temp, i, a, jobs_list ;
 jobs_list = document.getElementsByClassName("jobs_list")
   temp = document.getElementsByTagName("template")[0];
 
@@ -31,9 +31,10 @@ jobs_list = document.getElementsByClassName("jobs_list")
     des = document.importNode(des, true);
     des.textContent += jobs[i].description;
 
-    lable = document.importNode(lable, true);
-    lable.textContent += jobs[i].lable;
-    
+    for (a = 0; a <jobs[i].lable.length; a++) {
+    lable[a] = document.importNode(lable, true);
+    lable[a].textContent += jobs[i].lable[a];
+  }
     let jobList = document.querySelector('.job-list')
     jobList.insertAdjacentHTML("beforeend", 
     '<div class="job-card">' +
@@ -45,7 +46,7 @@ jobs_list = document.getElementsByClassName("jobs_list")
     '<div class="job_description">' + des.outerHTML + '</div>' +
     '</div>'+
     '</div>'+
-    '<div class="job_lable">' + lable.outerHTML + '</div>' +
+    '<div class="job_lable">' + lable[0].outerHTML + '  ' + lable[1].outerHTML + ' ' + lable[2].outerHTML + '</div>' +
     '</div>');
  
   }
