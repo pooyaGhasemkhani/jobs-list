@@ -23,27 +23,27 @@ body{
 .job-card:hover{
     border-left: 5px solid #5ea4a5;
 }
-.detail{
+.job-card_image-and-detail_detail{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.image-and-detail{
+.job-card_image-and-detail{
     display: flex;
     gap: 12px;
   }
 
-.job-card_image{
+.job-card_image-and-detail_image_file{
     width: 130px;
     height: 130px;
     border-radius: 50%;
 }
-.job_lable{
+.job-card_lable{
     display: flex;
     flex-direction: row;
     gap: 12px;
 }
-.job-card_lable{
+.job-card_lable_tags{
     background-color: rgb(172, 172, 172);
     padding: 5px;
     border-radius: 5px;

@@ -17,10 +17,10 @@ jobs_list = document.getElementsByClassName("jobs_list")
   temp = document.getElementsByTagName("template")[0];
 
   for (i = 0; i < jobs.length; i++) {
-    var companyName = temp.content.querySelector(".job-card_company-name");
-    var title = temp.content.querySelector(".job-card_title");
-    var des = temp.content.querySelector(".job-card_description");
-    var lable = temp.content.querySelector(".job-card_lable");
+    var companyName = temp.content.querySelector(".job-card_image-and-detail_detail_company-name");
+    var title = temp.content.querySelector(".job-card_image-and-detail_detail_title");
+    var des = temp.content.querySelector(".job-card_image-and-detail_detail_description");
+    var lable = temp.content.querySelector(".job-card_lable_tags");
 
     companyName = document.importNode(companyName, true);
     companyName.textContent += jobs[i].company ;
@@ -38,15 +38,15 @@ jobs_list = document.getElementsByClassName("jobs_list")
     let jobList = document.querySelector('.job-list')
     jobList.insertAdjacentHTML("beforeend", 
     '<div class="job-card">' +
-    '<div class="image-and-detail">'+
-    '<div>' + '<img class="job-card_image" src="' + jobs[i].avatar + '">' + '</div>' +
-    '<div class="detail">'+
-    '<div>' + companyName.outerHTML + '</div>' + 
-    '<div>' + title.outerHTML + '</div>' +
-    '<div>' + des.outerHTML + '</div>' +
+    '<div class="job-card_image-and-detail">'+
+    '<div class="job-card_image-and-detail_image">' + '<img class="job-card_image-and-detail_image_file" src="' + jobs[i].avatar + '">' + '</div>' +
+    '<div class="job-card_image-and-detail_detail">'+
+     companyName.outerHTML +  
+     title.outerHTML + 
+     des.outerHTML +
     '</div>'+
     '</div>'+
-    '<div class="job_lable">' + lable[0].outerHTML + '  ' + lable[1].outerHTML + ' ' + lable[2].outerHTML + '</div>' +
+    '<div class="job-card_lable">' + lable[0].outerHTML + '  ' + lable[1].outerHTML + ' ' + lable[2].outerHTML + '</div>' +
     '</div>');
  
   }
