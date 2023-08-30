@@ -17,10 +17,10 @@ jobs_list = document.getElementsByClassName("jobs_list")
   temp = document.getElementsByTagName("template")[0];
 
   for (i = 0; i < jobs.length; i++) {
-    var companyName = temp.content.querySelector(".job_company-name_p");
-    var title = temp.content.querySelector(".job_title_p");
-    var des = temp.content.querySelector(".job_description_p");
-    var lable = temp.content.querySelector(".job_lable_p");
+    var companyName = temp.content.querySelector(".job-card_company-name");
+    var title = temp.content.querySelector(".job-card_title");
+    var des = temp.content.querySelector(".job-card_description");
+    var lable = temp.content.querySelector(".job-card_lable");
 
     companyName = document.importNode(companyName, true);
     companyName.textContent += jobs[i].company ;
@@ -39,11 +39,11 @@ jobs_list = document.getElementsByClassName("jobs_list")
     jobList.insertAdjacentHTML("beforeend", 
     '<div class="job-card">' +
     '<div class="image-and-detail">'+
-    '<div class="job_image">' + '<img class="job_image_img" src="' + jobs[i].avatar + '">' + '</div>' +
+    '<div>' + '<img class="job-card_image" src="' + jobs[i].avatar + '">' + '</div>' +
     '<div class="detail">'+
-    '<div class="job_company-name">' + companyName.outerHTML + '</div>' + 
-    '<div class="job_title">' + title.outerHTML + '</div>' +
-    '<div class="job_description">' + des.outerHTML + '</div>' +
+    '<div>' + companyName.outerHTML + '</div>' + 
+    '<div>' + title.outerHTML + '</div>' +
+    '<div>' + des.outerHTML + '</div>' +
     '</div>'+
     '</div>'+
     '<div class="job_lable">' + lable[0].outerHTML + '  ' + lable[1].outerHTML + ' ' + lable[2].outerHTML + '</div>' +

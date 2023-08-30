@@ -33,7 +33,7 @@ body{
     gap: 12px;
   }
 
-.job_image_img{
+.job-card_image{
     width: 130px;
     height: 130px;
     border-radius: 50%;
@@ -41,18 +41,18 @@ body{
 .job_lable{
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 12px;
 }
-.job_lable_p{
+.job-card_lable{
     background-color: rgb(172, 172, 172);
     padding: 5px;
     border-radius: 5px;
 }
-.job_company-name_p{
+.job-card_company-name{
  color: #5ea4a5;
  font-size: 18px;
 }
-.job_description_p{
+.job-card_description{
     color: gray;
     font-size: 15px;
 }
